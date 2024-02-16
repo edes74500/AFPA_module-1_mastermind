@@ -164,16 +164,16 @@ const showResult = () => {
   resultDisplay = document.getElementById("result");
   console.log(goodPlaceColor.length);
   if (goodPlaceColor.length == maxProposition) {
-    resultDisplay.innerHTML = `
-  <h2> VICTORY!! En ${tryCounter} essais</h2>
+    resultDisplay.innerHTML = `<div>
+  <h2> VICTORY!! En ${tryCounter} essais</h2></div>
   <iframe src="https://gifer.com/embed/6U6m" width=480 height=294.857 frameBorder="0" allowFullScreen></iframe><p>`;
   } else {
-    resultDisplay.innerHTML = `<h2> GAME OVER!! </h2>
+    resultDisplay.innerHTML = `<div><h2> GAME OVER!! </h2>
     <p> Solution was: ${solution
       .map((solution) => {
         return `<span class="span-color" style="background-color: ${colors[solution]}"></span>`;
       })
-      .join("")} </p>
+      .join("")} </p></div>
   <iframe src="https://gifer.com/embed/7q09" width=480 height=480.000 frameBorder="0" allowFullScreen></iframe><p>
   `;
   }

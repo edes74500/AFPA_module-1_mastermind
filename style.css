@@ -68,23 +68,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 800px;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+  height: 1fr;
   overflow-x: hidden;
   overflow-y: scroll;
-  gap: 20px;
+  gap: 10px;
   background-color: black;
   background: -webkit-linear-gradient(#414141, #303030);
   border-radius: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 #solution .result-box_hover {
   z-index: 3;
@@ -122,13 +118,13 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
 #form {
@@ -242,6 +238,8 @@ body {
 
 iframe {
   pointer-events: none;
+  width: 150px !important;
+  height: 150px !important;
 }
 
 .result-box {

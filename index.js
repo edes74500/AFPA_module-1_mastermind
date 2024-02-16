@@ -268,6 +268,7 @@ form.addEventListener("submit", (e) => {
   showCurrentTryResult();
   if (gameIsOver) {
     showResult();
+    form.innerHTML = "";
   }
 });
 

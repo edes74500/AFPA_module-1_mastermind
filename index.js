@@ -5,6 +5,7 @@ const input = form.querySelectorAll('input[type="number"]');
 let colors = ["red", "blue", "green", "yellow", "purple"];
 
 let maxColor = 4;
+let propositionSize = 4;
 let solution = [];
 let proposition = [];
 
@@ -105,26 +106,49 @@ const showResult = () => {
   <iframe src="https://gifer.com/embed/6U6m" width=480 height=294.857 frameBorder="0" allowFullScreen></iframe><p>`;
   } else {
     resultDisplay.innerHTML = `<h2> GAME OVER!! </h2>
-    <p> la solution est : ${solution
+    <p> Solution was: ${solution
       .map((solution) => {
         return `<span class="span-color" style="background-color: ${colors[solution - 1]}"></span>`;
       })
       .join("")} </p>
-  <iframe src="https://gifer.com/embed/7q09" width=480 height=480.000 frameBorder="0" allowFullScreen></iframe><p>`;
+  <iframe src="https://gifer.com/embed/7q09" width=480 height=480.000 frameBorder="0" allowFullScreen></iframe><p>
+  `;
   }
 };
 
 showCurrentTryResult = () => {
+  let wrongColorAndPlace = propositionSize - goodPlaceColor.length - goodColor.length;
+
+  let wrongColorAndPlaceSpans = "";
+  for (let i = 0; i < wrongColorAndPlace; i++) {
+    wrongColorAndPlaceSpans += `<span class="result-box_pin" style="background-color: rgba(255, 255, 255, 0.259)
+    "></span>`;
+  }
+
   solutionDisplayContainer.innerHTML += `
   <div class="try-container">
-  <h2> Essai ${tryCounter} </h2>
-  <p> Votre proposition est : ${proposition
+  <p>  ${tryCounter}/10 </p>
+  <p>${proposition
     .map((proposition) => {
       return `<span class="span-color" style="background-color: ${colors[proposition - 1]}"></span>`;
     })
     .join("")}</p>
-  <p> Vous avez trouvé ${goodPlaceColor.length} couleurs bien place</p>
-  <p> Vous avez trouvé ${goodColor.length} couleurs bonne mais mal place</p>
+       <div class="result-box">
+       ${goodPlaceColor
+         .map((goodPlaceColor) => {
+           return `<span class="result-box_pin" style="background-color: red"></span>`;
+         })
+         .join("")}
+       ${goodColor
+         .map((goodColor) => {
+           return `<span class="result-box_pin" style="background-color: white"></span>`;
+         })
+         .join("")}
+        
+       ${wrongColorAndPlaceSpans}
+       
+<div class="result-box_hover">${goodPlaceColor.length} bien place, ${goodColor.length} de la bonne couleur </div>
+</div>
   </div>
   `;
 };
@@ -135,8 +159,9 @@ form.addEventListener("submit", (e) => {
   if (gameIsOver) {
     return;
   }
-  checkInputValue();
 
+  checkInputValue();
+  if (!allInputHasValue) return;
   if (allInputHasValue) {
     setInputResult();
     masterMind();

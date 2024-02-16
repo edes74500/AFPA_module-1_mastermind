@@ -248,6 +248,11 @@ iframe {
   margin: auto;
   border-radius: 50%;
   background-color: red;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .try-container {

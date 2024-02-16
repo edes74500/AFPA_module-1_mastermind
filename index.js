@@ -80,7 +80,7 @@ const setInputResult = () => {
 input.forEach((input) => {
   input.addEventListener("change", (e) => {
     input.style.backgroundColor = colors[e.target.value - 1];
-    input.style.color = colors[e.target.value - 1];
+    // input.style.color = colors[e.target.value - 1];
   });
 });
 

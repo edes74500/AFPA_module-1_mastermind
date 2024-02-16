@@ -49,6 +49,7 @@ input {
   &[type="number"] {
     border-radius: 50%;
     height: 50px;
+    color: transparent !important;
     width: 50px;
     border: none;
   }

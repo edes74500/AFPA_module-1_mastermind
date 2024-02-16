@@ -41,13 +41,15 @@ body {
     margin-top: 50px;
     // line-height: 20px;
     background: -webkit-linear-gradient(#eee, #333);
+    background: radial-gradient(circle, rgba(201, 129, 20, 1) 53%, rgba(255, 255, 255, 0) 99%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   h3 {
     transform: translateY(-50px);
     font-size: 2rem;
-    background: -webkit-linear-gradient(#eee, #a09f9f);
+    // color: orange;
+    background: -webkit-linear-gradient(#ffffff, #a19692);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Kaushan Script", cursive;

@@ -1,6 +1,7 @@
 body {
-  margin: 10px;
+  margin: auto;
   background-color: #181a1b;
+  padding: 20px;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,13 +12,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
+  height: 90vh;
+  max-height: 90vh;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 800px;
-  margin: auto;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;

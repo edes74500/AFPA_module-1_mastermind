@@ -1,9 +1,13 @@
 body {
+  margin: 10px;
   background-color: #181a1b;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -14,7 +18,6 @@ body {
           flex-direction: column;
   max-width: 800px;
   margin: auto;
-  gap: 30px;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -71,6 +74,9 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 800px;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   gap: 20px;
   background-color: black;
   background: -webkit-linear-gradient(#414141, #303030);
@@ -115,36 +121,83 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 50px;
 }
-#form div {
-  gap: 20px;
+#form .color-choices-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 10px;
 }
-input {
+#form .color-choices-container .circle {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  margin: 0 10px;
+  border-radius: 50%;
+  cursor: -webkit-grab;
+  cursor: grab;
+  background-color: #ffffff;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+#form .proposition {
+  background: -webkit-linear-gradient(#414141, #303030);
+  padding: 12px;
+  padding-top: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+#form .proposition .title-proposition {
+  top: 0%;
+  left: 10px;
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+  position: absolute;
+  font-family: "lato", cursive;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+#form .proposition .user-color-choices-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+#form .proposition .user-color-choices-container .slot {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+#form input {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-input[type=number] {
-  border-radius: 50%;
+  border: none;
+  width: 200px;
   height: 50px;
-  color: transparent !important;
-  width: 50px;
-  border: none;
-}
-input:focus {
-  outline: none;
-}
-input[type=submit] {
-  border: none;
   cursor: pointer;
   font-family: "Lato", sans-serif;
   border-radius: 10px;
-  height: 40px;
   background-color: orange;
   font-weight: 900;
   letter-spacing: 2px;
@@ -153,7 +206,7 @@ input[type=submit] {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-input[type=submit]:hover {
+#form input:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -239,4 +292,34 @@ iframe {
   -webkit-transform: rotate(-12deg);
           transform: rotate(-12deg);
   z-index: -1;
+  -webkit-animation: pulse 20s linear infinite;
+          animation: pulse 20s linear infinite;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(-12deg) scale(1.2);
+            transform: rotate(-12deg) scale(1.2);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(-12deg) scale(1.2);
+            transform: rotate(-12deg) scale(1.2);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,14 +1,16 @@
 body {
+  margin: 10px;
   background-color: #181a1b;
   color: white;
   display: flex;
-  // justify-content: center;
+  justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+  // max-height: 100vh;
   flex-direction: column;
   max-width: 800px;
   margin: auto;
-  gap: 30px;
+  // gap: 30px;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -54,12 +56,16 @@ body {
   justify-content: center;
   flex-direction: column;
   max-width: 800px;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   gap: 20px;
   // padding: 20px;
   background-color: black;
   background: -webkit-linear-gradient(#414141, #303030);
   border-radius: 10px;
   margin-bottom: 100px;
+
   div {
     p {
       display: flex;
@@ -82,35 +88,70 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  // align-items: center;
+  align-items: center;
   gap: 50px;
-  & div {
-    gap: 20px;
+
+  .color-choices-container {
     display: flex;
-    & input {
-      // display: inline-block;
+    gap: 10px;
+    .circle {
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      margin: 0 10px;
+      border-radius: 50%;
+      cursor: grab;
+      background-color: #ffffff;
+      transform: scale(1.1);
     }
   }
-}
-input {
-  user-select: none;
-  &[type="number"] {
-    border-radius: 50%;
-    height: 50px;
-    color: transparent !important;
-    width: 50px;
-    border: none;
+  .proposition {
+    background: -webkit-linear-gradient(#414141, #303030);
+    padding: 12px;
+    padding-top: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .title-proposition {
+      top: 0%;
+      left: 10px;
+      transform: translateY(-70%);
+      position: absolute;
+      font-family: "lato", cursive;
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+    }
+    .user-color-choices-container {
+      display: flex;
+      gap: 10px;
+      .slot {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        margin: 0 10px;
+        border-radius: 50%;
+        // cursor: grab;
+        background-color: #ffffff;
+      }
+    }
   }
-  &:focus {
-    outline: none;
-  }
-  &[type="submit"] {
+  input {
+    user-select: none;
+
     border: none;
     // background: none;
+    width: 200px;
+    height: 50px;
     cursor: pointer;
     font-family: "Lato", sans-serif;
     border-radius: 10px;
-    height: 40px;
+    // height: 40px;
     background-color: orange;
     // font-family: "Kaushan Script";
     font-weight: 900;
@@ -197,4 +238,16 @@ iframe {
   opacity: 0.2;
   transform: rotate(-12deg);
   z-index: -1;
+  animation: pulse 20s linear infinite;
+  @keyframes pulse {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(-12deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+  }
 }

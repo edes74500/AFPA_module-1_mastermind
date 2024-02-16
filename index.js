@@ -174,7 +174,8 @@ const showResult = () => {
         return `<span class="span-color" style="background-color: ${colors[solution]}"></span>`;
       })
       .join("")} </p></div>
-  <iframe src="https://gifer.com/embed/7q09" width=480 height=480.000 frameBorder="0" allowFullScreen></iframe><p>
+    <iframe src="https://giphy.com/embed/I9GcmsIALWIUw" width="480" height="381" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
   `;
   }
 };

@@ -183,6 +183,7 @@ const showResult = () => {
 showCurrentTryResult = () => {
   let wrongColorAndPlace = maxProposition - goodPlaceColor.length - goodColor.length;
   let wrongColorAndPlaceSpans = "";
+
   for (let i = 0; i < wrongColorAndPlace; i++) {
     wrongColorAndPlaceSpans += `<span class="result-box_pin" style="background-color: rgba(255, 255, 255, 0.259)
     "></span>`;
@@ -196,7 +197,7 @@ showCurrentTryResult = () => {
       return `<span class="span-color" style="background-color: ${colors[proposition]}"></span>`;
     })
     .join("")}</p>
-       <div class="result-box">
+       <div class="result-box" data-id=${tryCounter}>
        ${goodPlaceColor
          .map((goodPlaceColor) => {
            return `<span class="result-box_pin" style="background-color: red"></span>`;
@@ -207,14 +208,46 @@ showCurrentTryResult = () => {
            return `<span class="result-box_pin" style="background-color: white"></span>`;
          })
          .join("")}
-        
-       ${wrongColorAndPlaceSpans}
-       
-<div class="result-box_hover">${goodPlaceColor.length} bien place, ${goodColor.length} de la bonne couleur </div>
-</div>
-  </div>
+               ${wrongColorAndPlaceSpans}
   `;
-  scrollToBottom();
+
+  const text = `${goodPlaceColor.length} bien place, ${goodColor.length} de la bonne couleur`;
+  let hoverDiv = document.createElement("div");
+  hoverDiv.classList.add("result-box_hover");
+  hoverDiv.dataset.id = tryCounter;
+  hoverDiv.innerHTML = text;
+  hoverDiv.style.position = "absolute";
+  hoverDiv.style.left = "200vh";
+  hoverDiv.style.top = "200vh";
+  document.body.appendChild(hoverDiv);
+
+  const allPinBox = document.querySelectorAll(".result-box");
+  const allHoverDiv = document.querySelectorAll(".result-box_hover");
+  allPinBox.forEach((box) => {
+    box.addEventListener("mouseover", (e) => {
+      let id = e.target.dataset.id;
+      for (let i = 0; i < allHoverDiv.length; i++) {
+        if (allHoverDiv[i].dataset.id === id) {
+          allHoverDiv[i].style.display = "block";
+          allHoverDiv[i].style.left = `${e.pageX + 20}px`;
+          allHoverDiv[i].style.top = `${e.pageY + 20}px`;
+        }
+      }
+    });
+
+    box.addEventListener("mouseout", (e) => {
+      let id = e.target.dataset.id;
+      for (let i = 0; i < allHoverDiv.length; i++) {
+        if (allHoverDiv[i].dataset.id === id) {
+          allHoverDiv[i].style.left = "200vh";
+          allHoverDiv[i].style.top = "200vh";
+          allHoverDiv[i].style.display = "none";
+        }
+      }
+    });
+
+    scrollToBottom();
+  });
 };
 
 form.addEventListener("submit", (e) => {

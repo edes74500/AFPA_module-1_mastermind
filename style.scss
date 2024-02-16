@@ -69,7 +69,8 @@ body {
   border-radius: 10px;
   margin-bottom: 100px;
 
-  div {
+  .result-box_hover {
+    z-index: 3;
     p {
       display: flex;
       text-align: center;
@@ -196,19 +197,7 @@ iframe {
   &:hover .result-box_hover {
     opacity: 1;
   }
-  .result-box_hover {
-    opacity: 0;
-    display: flex;
-    width: max-content;
-    background-color: rgb(59, 59, 59);
-    border: 2px solid rgb(136, 136, 136);
-    position: absolute;
-    top: 50%;
-    right: -30px;
-    transform: translate(100%, -50%);
-    padding: 10px;
-    border-radius: 10px;
-  }
+
   .result-box_pin {
     height: 8px;
     width: 8px;
@@ -253,4 +242,16 @@ iframe {
       transform: rotate(0deg) scale(1);
     }
   }
+}
+
+.result-box_hover {
+  // opacity: 0;
+  display: flex;
+  width: max-content;
+  background-color: rgb(59, 59, 59);
+  border: 2px solid rgb(136, 136, 136);
+  position: absolute;
+  // transform: translate(100%, -50%);
+  padding: 10px;
+  border-radius: 10px;
 }

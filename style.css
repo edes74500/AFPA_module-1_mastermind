@@ -76,7 +76,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 800px;
-  max-height: 300px;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
   overflow-x: hidden;
   overflow-y: scroll;
   gap: 20px;
@@ -97,6 +98,21 @@ body {
   font-weight: 600;
   margin: 0;
   padding: 0;
+}
+#solution::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+#solution::-webkit-scrollbar-track {
+  background: #2e2e2e;
+  border-radius: 10px;
+}
+#solution::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+#solution::-webkit-scrollbar-thumb:hover {
+  background: #666;
 }
 
 #result {
@@ -129,7 +145,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 50px;
+  gap: 20px;
 }
 #form .color-choices-container {
   display: -webkit-box;

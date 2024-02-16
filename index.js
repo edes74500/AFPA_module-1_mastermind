@@ -144,9 +144,8 @@ form.addEventListener("submit", (e) => {
 
   gameIsOver = gameIsOverChecker();
 
+  showCurrentTryResult();
   if (gameIsOver) {
     showResult();
-  } else {
-    showCurrentTryResult();
   }
 });

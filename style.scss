@@ -2,13 +2,13 @@ body {
   background-color: #181a1b;
   color: white;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   max-width: 800px;
   margin: auto;
-  gap: 100px;
+  gap: 50px;
 }
 
 // div {
@@ -69,7 +69,12 @@ input {
 
 .span-color {
   height: 20px;
+  display: inline-block;
   width: 20px;
   margin: 0 10px;
   border-radius: 50%;
+}
+
+iframe {
+  pointer-events: none;
 }

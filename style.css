@@ -4,20 +4,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 800px;
   margin: auto;
-  gap: 100px;
+  gap: 50px;
 }
 
 #solution {
@@ -84,7 +81,12 @@ input[type=submit]:hover {
 
 .span-color {
   height: 20px;
+  display: inline-block;
   width: 20px;
   margin: 0 10px;
   border-radius: 50%;
+}
+
+iframe {
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
